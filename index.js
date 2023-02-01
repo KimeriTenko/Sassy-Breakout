@@ -106,32 +106,11 @@ user.classList.add('user')
 grid.appendChild(user)
 drawUser();
 
-/*Draw Player*/
-function drawUser() {
-    user.style.left = currentPosition[0] + 'px';
-    user.style.bottom = currentPosition[1] + 'px';
-}
-
 /*Add Ball*/
 const ball = document.createElement('div')
 ball.classList.add('ball')
 grid.appendChild(ball)
 drawBall()
-
-/*Draw Ball*/
-function drawBall() {
-    ball.style.left = ballCurrentPosition[0] + 'px';
-    ball.style.bottom = ballCurrentPosition[1] + 'px';
-}
-
-/*Move Ball*/
-function moveBall() {
-    ballCurrentPosition[0] += xDirection
-    ballCurrentPosition[1] += yDirection
-    drawBall()
-    checkForCollisions()                         
-}
-timerID = setInterval(moveBall, 30)
 
 /*User Movement using switch case*/
 /*if function keeps the user paddle from going off screen*/
@@ -153,6 +132,27 @@ function moveUser(e) {
     }
 
 document.addEventListener('keydown', moveUser)
+
+/*Draw Player*/
+function drawUser() {
+    user.style.left = currentPosition[0] + 'px';
+    user.style.bottom = currentPosition[1] + 'px';
+}
+
+/*Draw Ball*/
+function drawBall() {
+    ball.style.left = ballCurrentPosition[0] + 'px';
+    ball.style.bottom = ballCurrentPosition[1] + 'px';
+}
+
+/*Move Ball*/
+function moveBall() {
+    ballCurrentPosition[0] += xDirection
+    ballCurrentPosition[1] += yDirection
+    drawBall()
+    checkForCollisions()                         
+}
+timerId = setInterval(moveBall, 30)
 
 /*Collision Checks, block & wall. Using splice removes blocks visually from the array*/
 function checkForCollisions() {
@@ -178,6 +178,7 @@ function checkForCollisions() {
         }
       }
     }
+    /*Check for wall hits*/
     if (
     ballCurrentPosition[0] >= (boardWidth - ballDiameter) || 
     ballCurrentPosition[1] >= (boardHeight - ballDiameter) ||
@@ -199,7 +200,7 @@ if (ballCurrentPosition[1] <= 0) {
     scoreDisplay.innerHTML = 'Try Again'
     document.removeEventListener('keydown', moveUser)
     }
-
+}
 function changeDirection() {
     if (xDirection === 2 && yDirection === 2 ) {
         yDirection = -2
@@ -217,7 +218,4 @@ function changeDirection() {
         xDirection = 2
         return
     }
-}
-
-
 };

@@ -1,0 +1,37 @@
+/* Block Grid */
+.grid {
+  position: absolute;
+  width: 560px;
+  height: 800px;
+  border: solid 8B80F9 3px;
+  background-color: 10E24;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 10px;
+}
+
+/* Player Paddle */
+.user {
+  position: absolute;
+  width: 75px;
+  height: 20px;
+  background-color: FFB800;
+}
+
+/* Block styling */
+.block {
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background-color: 0C4BC;
+}
+
+/* Ball */
+.ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: FFB800;
+}/*# sourceMappingURL=style.css.map */

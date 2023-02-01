@@ -1,0 +1,43 @@
+$pink: F8C0C8;
+$aqua: 00C4BC;
+$purple: 8B80F9;
+$black: 1E1E24;
+$orange: FFB800;
+
+/* Block Grid */
+.grid {
+    position: absolute;
+    width: 560px;
+    height: 800px;
+    border: solid $purple 3px;
+    background-color: $black;
+    margin-top: 100px;
+    display: grid; 
+    grid-template-columns: auto;
+    grid-gap: 10px;
+}
+
+/* Player Paddle */
+.user {
+    position: absolute;
+    width: 75px;
+    height: 20px;
+    background-color: $orange;
+}
+
+/* Block styling */
+.block {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: $aqua;
+}
+
+/* Ball */
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: $orange;
+}
